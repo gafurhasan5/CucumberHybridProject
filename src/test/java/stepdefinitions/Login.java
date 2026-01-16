@@ -101,7 +101,7 @@ public class Login {
 
 	public String getTimestampEmail() {
 		Date date = new Date();
-		return "rehankhan" + date.toString().replace(" ", " ").replace(":", "") + "@gmail.com";
+		return "rehankhan" + date.toString().replace("", "").replace(":", "") + "@gmail.com";
 	}
 
 }

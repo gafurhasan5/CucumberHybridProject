@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.time.Duration;
+import java.util.Date;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -27,6 +28,18 @@ public class Register {
 
 	@When("User enter the below details  into below fields")
 	public void user_enter_the_below_details_into_below_fields(DataTable dataTable) {
+		Map<String, String> dataMap = dataTable.asMap(String.class, String.class);
+		driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
+		driver.findElement(By.id("input-lastname")).sendKeys(dataMap.get("lastName"));
+		driver.findElement(By.id("input-email")).sendKeys(getTimestampEmail());
+		driver.findElement(By.id("input-telephone")).sendKeys("telephone");
+		driver.findElement(By.id("input-password")).sendKeys("password");
+		driver.findElement(By.id("input-confirm")).sendKeys("password");
+
+	}
+
+	@When("User enter the below details  into below fields with duplicate email")
+	public void User_enter_the_below_details_into_below_fields_with_duplicate_email(DataTable dataTable) {
 		Map<String, String> dataMap = dataTable.asMap(String.class, String.class);
 		driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
 		driver.findElement(By.id("input-lastname")).sendKeys(dataMap.get("lastName"));
@@ -100,10 +113,13 @@ public class Register {
 //						.getText().contains("Password must be between 4 and 20 characters!"));
 //		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText()
 //				.contains("Warning: You must agree to the Privacy Policy!"));
-		String alertText = driver.findElement(
-			       By.xpath("//div[@class='alert alert-danger alert-dismissible']")
-			).getText();
-			Assert.assertTrue(alertText.contains("Warning: You must agree to the Privacy Policy!"));
+		String alertText = driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']"))
+				.getText();
+		Assert.assertTrue(alertText.contains("Warning: You must agree to the Privacy Policy!"));
 
+	}
+
+	private String getTimestampEmail() {
+		return "rehankhan" + System.currentTimeMillis() + "@gmail.com";
 	}
 }
