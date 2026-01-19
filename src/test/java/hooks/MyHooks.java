@@ -1,6 +1,8 @@
 package hooks;
 
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import factory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import utils.ConfigReader;
 
 public class MyHooks {
 	WebDriver driver;
@@ -15,7 +18,15 @@ public class MyHooks {
 	@Before
 	public void setup() {
 
-		DriverFactory.initializeBrowser("chrome");
+		Properties prop = null;
+		try {
+			prop = ConfigReader.initializeProperties();
+		} catch (IOException e) {
+
+
+			e.printStackTrace();
+		}
+		DriverFactory.initializeBrowser(prop.getProperty("broser"));
 		driver = DriverFactory.getDriver();
 		// driver = new ChromeDriver();
 		// driver.manage().deleteAllCookies();
