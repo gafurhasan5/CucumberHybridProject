@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import utils.CommonUtils;
 import utils.ConfigReader;
 
 public class DriverFactory {
@@ -36,7 +37,9 @@ public class DriverFactory {
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(CommonUtils.PAGELOAD_WAIT_TIME));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(CommonUtils.IMPLICIT_WAIT_TIME));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(CommonUtils.EXPLICIT_WAIT_BASIC_TIME));
 		return driver;
 		
 	}
