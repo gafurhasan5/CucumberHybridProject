@@ -61,7 +61,7 @@ public class Register {
 	public void User_enter_the_below_details_into_below_fields_with_duplicate_email(DataTable dataTable) {
 		Map<String, String> dataMap = dataTable.asMap(String.class, String.class);
 		// driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
-		registerpage = new RegisterPage(driver);
+		//registerpage = new RegisterPage(driver);
 		registerpage.EnterFirstNameField(dataMap.get("firstName"));
 		registerpage.EnterLastNameField(dataMap.get("lastName"));
 		// driver.findElement(By.id("input-lastname")).sendKeys(dataMap.get("lastName"));

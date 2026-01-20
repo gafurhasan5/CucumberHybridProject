@@ -54,7 +54,7 @@ public class Search {
 	public void user_should_get_a_message_about_no_product_matching() {
 		// Assert.assertTrue(driver.findElement(By.xpath("//input[@id='button-search']/following-sibling::p")));
 		searchpage = new SearchPage(driver);
-		Assert.assertEquals("There is no product that matches the search criteria.",
+		Assert.assertEquals("iThere is no product that matches the search criteria.",
 				searchpage.InValidProductDisplayMsg());
 	}
 
@@ -62,6 +62,7 @@ public class Search {
 	public void user_dont_enter_any_product_name_in_search_box_field() {
 
 		homepage = new HomePage(driver);
+		Assert.fail();
 	}
 
 }

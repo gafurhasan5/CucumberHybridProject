@@ -33,7 +33,7 @@ public class Login {
 	@When("User entered the valid email address {string} into the email field")
 	public void user_entered_the_valid_email_address_into_the_email_field(String emailtext) {
 		// driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(emailtext);
-		loginpage = new LoginPage(driver);
+		//loginpage = new LoginPage(driver);
 		loginpage.EnterEmailField(emailtext);
 
 	}
@@ -63,7 +63,7 @@ public class Login {
 
 	@When("User entered the invalid email address into the email field")
 	public void user_entered_the_invalid_email_address_into_the_email_field() {
-		loginpage = new LoginPage(driver);
+		//loginpage = new LoginPage(driver);
 		loginpage.EnterEmailField(CommonUtils.getTimestampEmail());
 		// driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(CommonUtils.getTimestampEmail());
 	}
@@ -82,7 +82,7 @@ public class Login {
 
 	@When("User dont entered email into the email field")
 	public void user_dont_entered_email_into_the_email_field() {
-		loginpage = new LoginPage(driver);
+		//loginpage = new LoginPage(driver);
 		loginpage.EnterEmailField("");
 		// driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("");
 	}
