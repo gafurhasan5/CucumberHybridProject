@@ -30,7 +30,7 @@ public class Login {
 		loginpage = new LoginPage(driver);
 	}
 
-	@When("User entered the valid email address {string} into the email field")
+	@When("^User entered the valid email address (.+) into the email field$")
 	public void user_entered_the_valid_email_address_into_the_email_field(String emailtext) {
 		// driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(emailtext);
 		//loginpage = new LoginPage(driver);
@@ -38,13 +38,28 @@ public class Login {
 
 	}
 
-	@And("User entered the valid password {string} into the password field")
+	@And("^User entered the valid password (.+) into the password field$")
 	public void user_entered_the_valid_password_into_the_password_field(String password) {
 		// driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys(password);
 		// loginpage = new LoginPage(driver);
 		loginpage.EnterPasswordField(password);
 
 	}
+//	@When("User entered the valid email address {string} into the email field")
+//	public void user_entered_the_valid_email_address_into_the_email_field(String emailtext) {
+//		// driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(emailtext);
+//		//loginpage = new LoginPage(driver);
+//		loginpage.EnterEmailField(emailtext);
+//
+//	}
+//
+//	@And("User entered the valid password {string} into the password field")
+//	public void user_entered_the_valid_password_into_the_password_field(String password) {
+//		// driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys(password);
+//		// loginpage = new LoginPage(driver);
+//		loginpage.EnterPasswordField(password);
+//
+//	}
 
 	@And("User click the login button")
 	public void user_click_the_login_button() {
