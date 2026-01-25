@@ -9,6 +9,7 @@ public class ConfigReader {
 	public static Properties initializeProperties() throws IOException
 	{
 		Properties prop=new Properties();
+		// I Changed the path of my paths
 		File proFile=new File("C:\\Users\\Admin\\git\\CucumberHybridProject\\src\\test\\resources\\config\\config.properties");
 		//C:\Users\Admin\git\CucumberHybridProject\src\test\resources\config\config.properties
 		FileInputStream fis=new FileInputStream(proFile);
