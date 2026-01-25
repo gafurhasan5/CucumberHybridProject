@@ -13,6 +13,7 @@ import pages.SearchPage;
 
 public class Search {
 
+	//WebDriver Add
 	WebDriver driver;
 	HomePage homepage;
 	SearchPage searchpage;

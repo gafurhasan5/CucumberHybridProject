@@ -9,7 +9,8 @@ public class ConfigReader {
 	public static Properties initializeProperties() throws IOException
 	{
 		Properties prop=new Properties();
-		File proFile=new File("C:\\CucumberHybridFrameworkProject\\CucumberHybridFramework\\src\\test\\resources\\config\\config.properties");
+		File proFile=new File("C:\\Users\\Admin\\git\\CucumberHybridProject\\src\\test\\resources\\config\\config.properties");
+		//C:\Users\Admin\git\CucumberHybridProject\src\test\resources\config\config.properties
 		FileInputStream fis=new FileInputStream(proFile);
 		prop.load(fis);
 		return prop;
